@@ -1,0 +1,11 @@
+- hosts: all
+  become: yes
+  become_method: sudo
+  tasks:
+  - name: Ansible apt list of packages
+    apt:
+      force_apt_get: yes
+      name: ['vim','nginx','zip']
+      update_cache: true
+      state: present
+    
